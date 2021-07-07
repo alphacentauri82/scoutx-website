@@ -10,10 +10,24 @@ export function ReactMarkdownTransformImageUri(src) {
   return match ? src : `https://raw.githubusercontent.com/alphacentauri82/scoutx/main/${src}`;
 }
 
+export function slugifyString(string) {
+  return string
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "")
+    .toLowerCase();
+}
+
 export default function ReactMarkdownComponents(markdown) {
   return {
     h1: ({ children }) => <h1 className={Styles.content__h1}>{children}</h1>,
-    h2: ({ children }) => <h2 className={Styles.content__h2}>{children}</h2>,
+    h2: ({ children }) => (
+      <h2 className={Styles.content__h2} id={`${slugifyString(children[0])}`}>
+        {children}
+      </h2>
+    ),
     h3: ({ children }) => <h3 className={Styles.content__h3}>{children}</h3>,
     h4: ({ children }) => <h4>{children}</h4>,
     h5: ({ children }) => <h5>{children}</h5>,
@@ -21,7 +35,7 @@ export default function ReactMarkdownComponents(markdown) {
     strong: ({ children }) => <span>{children}</span>,
     p: ({ children }) => <p className={Styles.content__p}>{children}</p>,
     a: ({ children, href }) => (
-      <a href={href} target="_blank" rel="nofollow noreferrer" className={Styles.content__a}>
+      <a href={href} className={Styles.content__a}>
         {children}
       </a>
     ),
