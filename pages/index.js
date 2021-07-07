@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import ReactMarkdownComponents, {
   ReactMarkdownTransformImageUri,
 } from "@utils/ReactMarkdownComponents";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import Styles from "@styles/Content.module.css";
 
 export default function Home({ content }) {
@@ -17,7 +19,7 @@ export default function Home({ content }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header></header>
+      <Header />
 
       <main className={Styles.content}>
         <ReactMarkdown
@@ -28,7 +30,7 @@ export default function Home({ content }) {
         />
       </main>
 
-      <footer></footer>
+      <Footer />
     </>
   );
 }
