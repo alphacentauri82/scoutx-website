@@ -8,17 +8,22 @@
 .content__h1 {
   font-size: 4rem;
   margin-bottom: 3rem;
+  font-family: var(--font-family-heading);
 }
 
 .content__h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin-top: 4rem;
+  font-family: var(--font-family-heading);
+  color: var(--color-brand);
 }
 
 .content__h3 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  font-family: var(--font-family-heading);
+  color: var(--color-brand);
 }
 
 .content__ul {
@@ -50,7 +55,7 @@
 .content__pre {
   margin: 0;
   border-radius: 0.5rem;
-  background: #272822;
+  background: var(--color-foreground);
   color: #f8f8f2;
   white-space: pre-wrap;
   padding: 1rem;
@@ -62,8 +67,8 @@
   white-space: pre-wrap;
   word-spacing: normal;
   word-wrap: normal;
-  background: #272822;
-  color: #f8f8f2;
+  background: var(--color-foreground);
+  color: var(--color-background);
   text-shadow: 0 1px rgb(0 0 0 / 30%);
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-size: 1em;
@@ -76,6 +81,9 @@
 .content__hr {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  border-color: var(--color-contrast);
+  border-width: 0.125rem;
+  border-style: solid;
 }
 
 .content__a {
@@ -89,6 +97,6 @@
 .content__a:focus,
 .content__a:hover {
   outline: none;
-  box-shadow: #009688 0 0 0 0.25rem;
+  box-shadow: var(--color-brand) 0 0 0 0.25rem;
   transition: box-shadow 0.2s ease 0s;
 }

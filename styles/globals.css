@@ -1,5 +1,16 @@
 :root {
   --content-max-width: 1080px;
+  --font-family-main: "Karla", sans-serif;
+  --font-family-heading: "Rubik", sans-serif;
+
+  --color-foreground: #16222f;
+  --color-background: #ffffff;
+
+  --color-brand: #6c3fe8;
+  --color-accent: #b64bad;
+  --color-contrast: #b64bad;
+
+  --color-muted: #c2c7cb;
 }
 
 html {
@@ -10,8 +21,8 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-family-main);
+  color: var(--color-foreground);
 }
 
 * {
